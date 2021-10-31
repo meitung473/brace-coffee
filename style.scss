@@ -1,0 +1,283 @@
+
+*{
+    margin:0px;
+    font-family: 微軟正黑體;
+}
+
+nav{
+    z-index: 2;
+    position: sticky;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FCAA67;
+    height: 40px;
+    padding: 5px 0;
+    .logo{
+        padding: 0 30px;
+        &>img{
+            width: 4rem;
+        }
+    }
+
+    .navbar{
+        ul{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style-type: none;
+            padding: 0 5px;
+            a{
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 900;
+                padding: 10px 10px;
+                font-size:1rem;
+                color:#60492C;
+
+                &:hover{
+                    cursor: pointer;
+                    border-radius: 0px;
+                    color:#E7E7E7;
+                    background-color: #CD533B;
+                }
+            }
+        }
+        .hambur{
+            position: absolute;
+            display: none;
+            margin: 2px 2px;
+            right: 10px;
+            height: 40px;
+            width: 40px;
+            border: none;
+            background-color: #FCAA67;
+            div{
+                position: relative;
+                margin: 5px 0px;
+                width: 25px;
+                height: 3px;
+                background-color: #E7E7E7;
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:30rem;
+
+    background-image: url('./img/slider-03.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, .6);
+    background-blend-mode: multiply;
+    h1{
+        text-align: center;
+        color: #E7E7E7;
+        font-size: 3rem;
+        font-family: Great Vibes;
+    }
+}
+
+.section{
+    text-align: center;
+    padding: 1rem 0 ;
+    margin: 30px 0;
+    h2{
+        font-size: 2rem;
+        &::before{
+            content: ' ';
+            border: 5px solid #FCAA67;
+            background-color: #FCAA67;
+            margin-right: 5px;
+        }
+    }
+    &> div{
+        margin:  60px 0;
+        p{
+            padding: 0 10px;
+            line-height: 1.5rem;
+        }
+    }
+    .order button{
+        cursor: pointer;
+        margin: 0 10px;
+        height: 5rem;
+        width: 8rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        border-radius:5px;
+        box-shadow: 2px 2px .4rem rgba(0, 0, 0, .3);
+        &:nth-child(1){
+            background-color: #FCAA67;
+        }
+        &:nth-child(2){
+            background-color: #EDE580;
+        }
+    }
+    .menu-box{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .dish{
+            position: relative;
+            width: 15em;
+            height: 15em;
+            background-size:cover;
+            background-position: center center;
+            &:hover div{
+                opacity: 1;
+                transition: 0.3s;
+                h4{
+
+                    transition: 0.3s ease-in-out;
+                    transform: translateY(0);
+                }
+            }
+            &:nth-child(odd){
+                background-image: url('./img/gallery-img-01.jpg');
+                div:hover{
+                    background-color:rgba(103, 192, 252, 0.5);
+                }
+            }
+            &:nth-child(even){
+                background-image: url('./img/gallery-img-02.jpg');
+                div:hover{
+                    background-color:rgba(252,170,103,0.5);
+                }
+            }
+            div{
+                position: absolute;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                width:100%;
+                height:100%;
+                background-color: transparent;
+                opacity: 0;
+                font-size: 1.5rem;
+                h4{
+                    color:#E7E7E7;
+                    transform: translateY(-20px);
+                }
+            }
+        }
+    }
+    .map{
+        width: 90%;
+       height: 70vh;
+    }
+}
+
+
+// .section .menu-box .dish:nth-child(even) div:hover{
+//     background-color:rgba(252,170,103,0.5);
+// }
+// .section .menu-box .dish:nth-child(odd) div:hover{
+//     background-color:rgba(103, 192, 252, 0.5);
+// }
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 30px 0px;
+    background-color: #FCAA67;
+    div p{ 
+        color:#60492C;
+    }
+    .logo{
+        text-align: center;
+        img{
+            width: 8rem;
+        }
+        .socialMedia a{
+            margin: 0 1px;
+            text-decoration: none;
+            color:#60492C;
+            &:hover{
+                transition: 0.3s;
+                color:white;
+            }
+            &:nth-child(1):after{
+                content: ' Facebook ';
+            }
+            &:nth-child(2):after{
+                content: ' Instargam ';
+            }
+            &:nth-child(3):after{
+                content: ' Youtube ';    
+            }
+            i{
+                display: none;
+                opacity: 0;
+            }
+        }
+    }
+}
+// footer div p{ 
+//     color:#60492C;
+    
+// }
+// footer .logo{
+//     text-align: center;
+// }
+// footer .logo img{
+//     width: 8rem;
+// }
+// footer .logo .socialMedia a{
+//   margin: 0 1px;
+//   text-decoration: none;
+//   color:#60492C;
+// }
+
+// footer .logo .socialMedia a:nth-child(1):after{
+//     content: ' Facebook ';
+// }
+// footer .logo .socialMedia a:nth-child(2):after{
+//     content: ' Instargam ';
+// }
+// footer .logo .socialMedia a:nth-child(3):after{
+//     content: ' Youtube ';
+// }
+// footer .logo .socialMedia a:hover{
+//     transition: 0.3s;
+//     color:white;
+// }
+
+// footer .logo .socialMedia a i{
+//     display: none;
+//     opacity: 0;
+// }
+
+.gotoTop{
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background-color:rgba(252,170,103,.8);;
+    border: none;
+    border-radius: 50%;
+    margin: 20px;
+    right: 0;
+    z-index: 100;
+    color:#E7E7E7;
+    box-shadow: 0 2px .3rem rgba(0, 0, 0, .6);
+    &:hover + i{
+        transform: translateY(-20px);
+    }
+}
+
+
+
