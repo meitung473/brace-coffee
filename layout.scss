@@ -1,0 +1,7 @@
+
+
+@mixin flexlayout($justiftValue:center,$alignValue:center) {
+    display: flex;
+    justify-content: $justiftValue;
+    align-items: $alignValue;
+}

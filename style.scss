@@ -1,3 +1,5 @@
+@use './color.scss' as colorsheet;
+@use './layout.scss' as layout;
 
 *{
     margin:0px;
@@ -8,10 +10,9 @@ nav{
     z-index: 2;
     position: sticky;
     top:0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FCAA67;
+    @include layout.flexlayout(space-between,center);
+   
+    background-color: colorsheet.$primary-color;
     height: 40px;
     padding: 5px 0;
     .logo{
@@ -23,9 +24,8 @@ nav{
 
     .navbar{
         ul{
-            display: flex;
+            @include layout.flexlayout(center,center);
             flex-direction: row;
-            align-items: center;
             list-style-type: none;
             padding: 0 5px;
             a{
@@ -34,13 +34,13 @@ nav{
                 font-weight: 900;
                 padding: 10px 10px;
                 font-size:1rem;
-                color:#60492C;
+                color:colorsheet.$footer-p;
 
                 &:hover{
                     cursor: pointer;
                     border-radius: 0px;
-                    color:#E7E7E7;
-                    background-color: #CD533B;
+                    color:colorsheet.$h4-title;
+                    background-color:colorsheet.$third-color;
                 }
             }
         }
@@ -52,13 +52,13 @@ nav{
             height: 40px;
             width: 40px;
             border: none;
-            background-color: #FCAA67;
+            background-color: colorsheet.$primary-color;
             div{
                 position: relative;
                 margin: 5px 0px;
                 width: 25px;
                 height: 3px;
-                background-color: #E7E7E7;
+                background-color: colorsheet.$h4-title;
                 border-radius: 3px;
             }
         }
@@ -66,9 +66,7 @@ nav{
 }
 
 .background{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include layout.flexlayout();
     height:30rem;
 
     background-image: url('./img/slider-03.jpg');
@@ -80,9 +78,8 @@ nav{
     background-blend-mode: multiply;
     h1{
         text-align: center;
-        color: #E7E7E7;
+        color: colorsheet.$h4-title;
         font-size: 3rem;
-        font-family: Great Vibes;
     }
 }
 
@@ -94,8 +91,8 @@ nav{
         font-size: 2rem;
         &::before{
             content: ' ';
-            border: 5px solid #FCAA67;
-            background-color: #FCAA67;
+            border: 5px solid colorsheet.$primary-color;
+            background-color: colorsheet.$primary-color;
             margin-right: 5px;
         }
     }
@@ -115,18 +112,16 @@ nav{
         font-weight: bold;
         border: none;
         border-radius:5px;
-        box-shadow: 2px 2px .4rem rgba(0, 0, 0, .3);
+        box-shadow: 2px 2px .4rem colorsheet.$shadow;
         &:nth-child(1){
-            background-color: #FCAA67;
+            background-color: colorsheet.$primary-color;
         }
         &:nth-child(2){
-            background-color: #EDE580;
+            background-color: colorsheet.$secondary-color;
         }
     }
     .menu-box{
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        @include layout.flexlayout(center,center);
         flex-wrap: wrap;
         .dish{
             position: relative;
@@ -146,27 +141,25 @@ nav{
             &:nth-child(odd){
                 background-image: url('./img/gallery-img-01.jpg');
                 div:hover{
-                    background-color:rgba(103, 192, 252, 0.5);
+                    background-color:colorsheet.$dishOdd;
                 }
             }
             &:nth-child(even){
                 background-image: url('./img/gallery-img-02.jpg');
                 div:hover{
-                    background-color:rgba(252,170,103,0.5);
+                    background-color:colorsheet.$dishEven;
                 }
             }
             div{
                 position: absolute;
-                display:flex;
-                align-items: center;
-                justify-content: center;
+                @include layout.flexlayout();
                 width:100%;
                 height:100%;
                 background-color: transparent;
                 opacity: 0;
                 font-size: 1.5rem;
                 h4{
-                    color:#E7E7E7;
+                    color:colorsheet.$h4-title;
                     transform: translateY(-20px);
                 }
             }
@@ -179,22 +172,14 @@ nav{
 }
 
 
-// .section .menu-box .dish:nth-child(even) div:hover{
-//     background-color:rgba(252,170,103,0.5);
-// }
-// .section .menu-box .dish:nth-child(odd) div:hover{
-//     background-color:rgba(103, 192, 252, 0.5);
-// }
-
 footer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include layout.flexlayout(space-around,center);
+  
 
     padding: 30px 0px;
-    background-color: #FCAA67;
+    background-color: colorsheet.$primary-color;
     div p{ 
-        color:#60492C;
+        color:colorsheet.$footer-p;
     }
     .logo{
         text-align: center;
@@ -204,10 +189,10 @@ footer{
         .socialMedia a{
             margin: 0 1px;
             text-decoration: none;
-            color:#60492C;
+            color:colorsheet.$footer-p;
             &:hover{
                 transition: 0.3s;
-                color:white;
+                color:colorsheet.$h4-title;
             }
             &:nth-child(1):after{
                 content: ' Facebook ';
@@ -225,40 +210,7 @@ footer{
         }
     }
 }
-// footer div p{ 
-//     color:#60492C;
-    
-// }
-// footer .logo{
-//     text-align: center;
-// }
-// footer .logo img{
-//     width: 8rem;
-// }
-// footer .logo .socialMedia a{
-//   margin: 0 1px;
-//   text-decoration: none;
-//   color:#60492C;
-// }
 
-// footer .logo .socialMedia a:nth-child(1):after{
-//     content: ' Facebook ';
-// }
-// footer .logo .socialMedia a:nth-child(2):after{
-//     content: ' Instargam ';
-// }
-// footer .logo .socialMedia a:nth-child(3):after{
-//     content: ' Youtube ';
-// }
-// footer .logo .socialMedia a:hover{
-//     transition: 0.3s;
-//     color:white;
-// }
-
-// footer .logo .socialMedia a i{
-//     display: none;
-//     opacity: 0;
-// }
 
 .gotoTop{
     cursor: pointer;
@@ -272,8 +224,8 @@ footer{
     margin: 20px;
     right: 0;
     z-index: 100;
-    color:#E7E7E7;
-    box-shadow: 0 2px .3rem rgba(0, 0, 0, .6);
+    color:colorsheet.$h4-title;
+    box-shadow: 0 2px .3rem colorsheet.$shadow;
     &:hover + i{
         transform: translateY(-20px);
     }

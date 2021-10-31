@@ -23,8 +23,9 @@ nav .logo > img {
 }
 nav .navbar ul {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  flex-direction: row;
   list-style-type: none;
   padding: 0 5px;
 }
@@ -78,7 +79,6 @@ nav .navbar .hambur div {
   text-align: center;
   color: #E7E7E7;
   font-size: 3rem;
-  font-family: Great Vibes;
 }
 
 .section {
@@ -120,7 +120,7 @@ nav .navbar .hambur div {
   background-color: #EDE580;
 }
 .section .menu-box {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -155,8 +155,8 @@ nav .navbar .hambur div {
 .section .menu-box .dish div {
   position: absolute;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   background-color: transparent;
@@ -195,7 +195,7 @@ footer .logo .socialMedia a {
 }
 footer .logo .socialMedia a:hover {
   transition: 0.3s;
-  color: white;
+  color: #E7E7E7;
 }
 footer .logo .socialMedia a:nth-child(1):after {
   content: " Facebook ";
@@ -224,7 +224,7 @@ footer .logo .socialMedia a i {
   right: 0;
   z-index: 100;
   color: #E7E7E7;
-  box-shadow: 0 2px 0.3rem rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 0.3rem rgba(0, 0, 0, 0.3);
 }
 .gotoTop:hover + i {
   transform: translateY(-20px);
